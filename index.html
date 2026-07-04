@@ -402,5 +402,61 @@
     </footer>
 
     <script src="js/main.js"></script>
+        <div id="auth-modal" class="auth-modal-overlay">
+        <div class="auth-modal-scaffold">
+            <button id="auth-modal-close" class="auth-close-trigger">&times;</button>
+            
+            <div class="auth-form-container">
+                
+                <div id="sign-in-pane" class="auth-pane">
+                    <h3 class="auth-pane-title">Welcome Back</h3>
+                    <p class="auth-pane-subtitle">Access your enterprise PropTech dashboard node.</p>
+                    
+                    <form class="auth-form-scaffold" onsubmit="event.preventDefault();">
+                        <div class="input-field-group">
+                            <label class="input-meta-label">Corporate Email</label>
+                            <input type="email" placeholder="name@company.com" required class="premium-form-input">
+                        </div>
+                        <div class="input-field-group">
+                            <label class="input-meta-label">Account Password</label>
+                            <input type="password" placeholder="••••••••" required class="premium-form-input">
+                        </div>
+                        <button type="submit" class="auth-prime-trigger">Sign In to Dashboard</button>
+                    </form>
+                    
+                    <p class="auth-switch-context">
+                        New to the platform? <a href="#" id="trigger-to-signup" class="auth-inline-link">Create an account</a>
+                    </p>
+                </div>
+
+                <div id="sign-up-pane" class="auth-pane hidden-pane">
+                    <h3 class="auth-pane-title">Initialize Workspace</h3>
+                    <p class="auth-pane-subtitle">Deploy a secure digital architecture for your active sites.</p>
+                    
+                    <form class="auth-form-scaffold" onsubmit="event.preventDefault();">
+                        <div class="input-field-group">
+                            <label class="input-meta-label">Full Name</label>
+                            <input type="text" placeholder="John Doe" required class="premium-form-input">
+                        </div>
+                        <div class="input-field-group">
+                            <label class="input-meta-label">Corporate Email</label>
+                            <input type="email" placeholder="name@company.com" required class="premium-form-input">
+                        </div>
+                        <div class="input-field-group">
+                            <label class="input-meta-label">Account Password</label>
+                            <input type="password" placeholder="••••••••" required class="premium-form-input">
+                        </div>
+                        <button type="submit" class="auth-prime-trigger">Register Enterprise Node</button>
+                    </form>
+                    
+                    <p class="auth-switch-context">
+                        Already registered? <a href="#" id="trigger-to-signin" class="auth-inline-link">Sign in instead</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
