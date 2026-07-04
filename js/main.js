@@ -1,10 +1,12 @@
 /**
- * Apni Estate — Dynamic Automation Core (Fixed Active Navigation)
+ * Apni Estate — Dynamic Automation Core
  */
 
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. Fluid Sticky Header Padding Controller
+    // ==========================================================================
+    // 1. FLUID STICKY HEADER PADDING CONTROLLER
+    // ==========================================================================
     const navAxis = document.querySelector(".nav-axis");
     const navWrapper = document.querySelector(".nav-wrapper");
 
@@ -22,7 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }, { passive: true });
     }
 
-    // 2. High-Performance Navigation Active State Matrix (Scrollspy & Click Fix)
+    // ==========================================================================
+    // 2. HIGH-PERFORMANCE NAVIGATION ACTIVE STATE MATRIX (SCROLLSPY & CLICK FIX)
+    // ==========================================================================
     const navItems = document.querySelectorAll(".nav-item");
     const sections = document.querySelectorAll("main, section[id]");
 
@@ -55,7 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach(section => sectionObserver.observe(section));
 
-    // 3. High-Performance Fluid Counter Engine
+    // ==========================================================================
+    // 3. HIGH-PERFORMANCE FLUID COUNTER ENGINE
+    // ==========================================================================
     const numericNodes = document.querySelectorAll(".metric-numerical");
     const easeOutQuad = (t) => t * (2 - t);
 
@@ -93,7 +99,9 @@ document.addEventListener("DOMContentLoaded", () => {
         requestAnimationFrame(counterEngine);
     };
 
-    // 4. Native Intersection Observers for Animations
+    // ==========================================================================
+    // 4. NATIVE INTERSECTION OBSERVERS FOR ANIMATIONS
+    // ==========================================================================
     const globalObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -127,4 +135,56 @@ document.addEventListener("DOMContentLoaded", () => {
         card.classList.add("reveal-scaffold");
         globalObserver.observe(card);
     });
+
+    // ==========================================================================
+    // 5. MODAL INTERACTION CONTROLLER (LOGIN / SIGNUP TOGGLE)
+    // ==========================================================================
+    const authModal = document.getElementById("auth-modal");
+    const loginTrigger = document.querySelector(".login-link");
+    const closeTrigger = document.getElementById("auth-modal-close");
+    
+    const signInPane = document.getElementById("sign-in-pane");
+    const signUpPane = document.getElementById("sign-up-pane");
+    const toSignUp = document.getElementById("trigger-to-signup");
+    const toSignIn = document.getElementById("trigger-to-signin");
+
+    // Open Modal View Engine
+    if (loginTrigger && authModal) {
+        loginTrigger.addEventListener("click", (e) => {
+            e.preventDefault();
+            authModal.classList.add("active-modal");
+            document.body.style.overflow = "hidden"; // Retain layout canvas view state without shifting layout columns
+        });
+    }
+
+    // Close Modal View Engine
+    if (closeTrigger && authModal) {
+        closeTrigger.addEventListener("click", () => {
+            authModal.classList.remove("active-modal");
+            document.body.style.overflow = "auto";
+        });
+
+        // Click outside target matrix bounds to clear viewport overlay
+        authModal.addEventListener("click", (e) => {
+            if (e.target === authModal) {
+                authModal.classList.remove("active-modal");
+                document.body.style.overflow = "auto";
+            }
+        });
+    }
+
+    // Dynamic Sliding State Transitions (Sign-In <=> Sign-Up Switcher Loop)
+    if (toSignUp && toSignIn && signInPane && signUpPane) {
+        toSignUp.addEventListener("click", (e) => {
+            e.preventDefault();
+            signInPane.classList.add("hidden-pane");
+            signUpPane.classList.remove("hidden-pane");
+        });
+
+        toSignIn.addEventListener("click", (e) => {
+            e.preventDefault();
+            signUpPane.classList.add("hidden-pane");
+            signInPane.classList.remove("hidden-pane");
+        });
+    }
 });
