@@ -53,8 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }, {
-        threshold: 0.3, // Triggers when 30% of the section is visible
-        rootMargin: "-20% 0px -60% 0px" // Optimized window layout for precision
+        threshold: 0.3,
+        rootMargin: "-20% 0px -60% 0px"
     });
 
     sections.forEach(section => sectionObserver.observe(section));
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 5. MODAL INTERACTION CONTROLLER (LOGIN / SIGNUP TOGGLE)
     // ==========================================================================
     const authModal = document.getElementById("auth-modal");
-    const loginTrigger = document.querySelector(".login-link");
+    const loginTriggers = document.querySelectorAll(".login-link");
     const closeTrigger = document.getElementById("auth-modal-close");
     
     const signInPane = document.getElementById("sign-in-pane");
@@ -148,14 +148,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const toSignUp = document.getElementById("trigger-to-signup");
     const toSignIn = document.getElementById("trigger-to-signin");
 
-    // Open Modal View Engine
-    if (loginTrigger && authModal) {
-        loginTrigger.addEventListener("click", (e) => {
+    // Open Modal View Engine (Handles both desktop and mobile buttons)
+    loginTriggers.forEach(trigger => {
+        trigger.addEventListener("click", (e) => {
             e.preventDefault();
             authModal.classList.add("active-modal");
-            document.body.style.overflow = "hidden"; // Retain layout canvas view state without shifting layout columns
+            document.body.style.overflow = "hidden";
         });
-    }
+    });
 
     // Close Modal View Engine
     if (closeTrigger && authModal) {
@@ -164,7 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.style.overflow = "auto";
         });
 
-        // Click outside target matrix bounds to clear viewport overlay
         authModal.addEventListener("click", (e) => {
             if (e.target === authModal) {
                 authModal.classList.remove("active-modal");
@@ -173,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Dynamic Sliding State Transitions (Sign-In <=> Sign-Up Switcher Loop)
+    // Dynamic Sliding Transitions (Sign-In <=> Sign-Up Switcher Loop)
     if (toSignUp && toSignIn && signInPane && signUpPane) {
         toSignUp.addEventListener("click", (e) => {
             e.preventDefault();
@@ -185,6 +184,35 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             signUpPane.classList.add("hidden-pane");
             signInPane.classList.remove("hidden-pane");
+        });
+    }
+
+    // ==========================================================================
+    // 6. RESPONSIVE COMPONENT CONTROLLER (HAMBURGER OPEN/CLOSE ENGINE)
+    // ==========================================================================
+    const menuTrigger = document.getElementById("mobile-menu-trigger");
+    const linksMenu = document.getElementById("nav-links-menu");
+    const mobileLinks = document.querySelectorAll(".nav-links-cluster .nav-item, .mobile-login-btn");
+
+    if (menuTrigger && linksMenu) {
+        menuTrigger.addEventListener("click", (e) => {
+            e.stopPropagation();
+            menuTrigger.classList.toggle("open-icon");
+            linksMenu.classList.toggle("open-menu");
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                menuTrigger.classList.remove("open-icon");
+                linksMenu.classList.remove("open-menu");
+            });
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!linksMenu.contains(e.target) && !menuTrigger.contains(e.target)) {
+                menuTrigger.classList.remove("open-icon");
+                linksMenu.classList.remove("open-menu");
+            }
         });
     }
 });
