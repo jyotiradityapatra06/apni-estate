@@ -6,18 +6,14 @@
     <title>Apni Estate — Enterprise PropTech Architectures</title>
     <meta name="description" content="PropTech infrastructure platforms tailored for Indian enterprise construction. Recognized by the Directorate of Information Technology, Government of Tripura.">
     
-    <!-- Typography: Premium Editorial Pairing -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- Styling is managed via css/style.css -->
 </head>
 <body>
 
-    <!-- 1. Sticky Glass Navigation Wrappers (Enriched via image references) -->
     <nav class="nav-axis">
         <div class="nav-wrapper">
             <a href="#" class="brand-monogram">
@@ -31,25 +27,35 @@
                 <span class="brand-name">APNI <span class="weight-light text-accent">ESTATE</span></span>
             </a>
             
-            <div class="nav-links-cluster">
-                <a href="#home" class="nav-item operational-link active">Home</a>
-                <a href="#about" class="nav-item operational-link">About Us</a>
-                <a href="#ai-features" class="nav-item operational-link">AI Features</a>
-                <a href="#services" class="nav-item operational-link">Properties</a>
-                <a href="#contact" class="nav-item operational-link">Contact</a>
+            <button class="mobile-nav-toggle" id="mobile-menu-trigger" aria-label="Toggle navigation">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+            
+            <div class="nav-links-cluster" id="nav-links-menu">
+                <a href="#home" class="nav-item active">Home</a>
+                <a href="#about" class="nav-item">About Us</a>
+                <a href="#ai-features" class="nav-item">AI Features</a>
+                <a href="#services" class="nav-item">Properties</a>
+                <a href="#contact" class="nav-item">Contact</a>
+                
+                <div class="mobile-only-actions">
+                    <a href="#" class="login-link mobile-login-btn">Log in</a>
+                    <a href="#contact" class="action-trigger-premium mobile-cta-btn">Get Started →</a>
+                </div>
             </div>
             
             <div class="nav-action-block">
-                <a href="#login" class="login-link">Log in</a>
+                <a href="#" class="login-link">Log in</a>
                 <a href="#contact" class="action-trigger-premium">
-                    <span class="trigger-text">Get Started</span>
+                    <span>Get Started</span>
                     <span class="trigger-arrow">→</span>
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- 2. Hero Section -->
     <main id="home" class="hero-canvas">
         <div class="hero-container-fluid">
             <div class="hero-asymmetric-grid">
@@ -95,7 +101,6 @@
         </div>
     </main>
 
-    <!-- 3. Recognition Panel -->
     <section class="recognition-strut">
         <div class="container-editorial">
             <div class="recognition-grid-layout">
@@ -107,7 +112,7 @@
                     </div>
                     <div class="pill-divider"></div>
                     <div class="pill-crest-right">
-                        <img src="startup-india-logo-m5kXmJPN.webp" alt="Startup India Logo" class="brand-badge-img">
+                        <img src="startup-india-logo-m5kXmJPN.webp" alt="Startup India Logo" class="brand-badge-img badge-width-long">
                     </div>
                 </div>
 
@@ -119,7 +124,7 @@
                     </div>
                     <div class="pill-divider"></div>
                     <div class="pill-crest-right">
-                        <img src="ST Logo.webp" alt="Startup Tripura Logo" class="brand-badge-img">
+                        <img src="ST Logo.webp" alt="Startup Tripura Logo" class="brand-badge-img badge-width-tall">
                     </div>
                 </div>
 
@@ -130,14 +135,13 @@
                     </div>
                     <div class="pill-divider"></div>
                     <div class="pill-crest-right">
-                        <img src="DIT LOGO.webp" alt="DIT Tripura Logo" class="brand-badge-img">
+                        <img src="DIT LOGO.webp" alt="DIT Tripura Logo" class="brand-badge-img badge-width-circular">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. Immersive Features Horizon (Built directly from image_84361e.jpg structural layouts) -->
     <section id="ai-features" class="premium-features-axis">
         <div class="container-editorial">
             <div class="section-badge-center">Our Premium Features</div>
@@ -149,9 +153,7 @@
                 <div class="benchmark-item"><span class="bullet-blue">💧</span> Trusted by 10K+ Families</div>
             </div>
 
-            <!-- Immersive Core Feature Cards Layout -->
             <div class="features-quad-grid">
-                <!-- Card 01 -->
                 <div class="feature-premium-card">
                     <span class="card-index-pill">01</span>
                     <div class="feature-icon-wrapper">
@@ -161,7 +163,6 @@
                     <p class="cell-description">Get instant responses from our experienced structural agents through our clean messaging layers.</p>
                 </div>
 
-                <!-- Card 02 -->
                 <div class="feature-premium-card">
                     <span class="card-index-pill">02</span>
                     <div class="feature-icon-wrapper">
@@ -171,7 +172,6 @@
                     <p class="cell-description">Every layout profile is checked thoroughly to assure state level safety metrics and programmatic trust loops.</p>
                 </div>
 
-                <!-- Card 03 -->
                 <div class="feature-premium-card">
                     <span class="card-index-pill">03</span>
                     <div class="feature-icon-wrapper">
@@ -181,7 +181,6 @@
                     <p class="cell-description">We maintain rigorous standards for all physical projects, ensuring you receive optimized architectural value.</p>
                 </div>
 
-                <!-- Card 04 -->
                 <div class="feature-premium-card">
                     <span class="card-index-pill">04</span>
                     <div class="feature-icon-wrapper">
@@ -194,7 +193,6 @@
         </div>
     </section>
 
-    <!-- 5. Trusted Industry Leaders Section (Built directly from image_843638.jpg elements) -->
     <section class="leaders-ecosystem-axis">
         <div class="container-editorial">
             <div class="section-badge-center">Trusted Worldwide</div>
@@ -208,46 +206,35 @@
                     </div>
                     <div class="metric-huge-digits metric-numerical" data-metric-cap="20">0+</div>
                     <div class="metric-meta-label">Trusted Partners</div>
-
                 </div>
 
                 <div class="metric-premium-box">
                     <div class="metric-icon-box">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     </div>
-                    <div class="metric-huge-digits metric-numerical" data-metric-cap="5">4.9</div>
+                    <div class="metric-huge-digits metric-numerical" data-metric-cap="5">0</div>
                     <div class="metric-meta-label">Average Rating</div>
-
                 </div>
 
                 <div class="metric-premium-box">
                     <div class="metric-icon-box">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
                     </div>
-                    <div class="metric-huge-digits metric-numerical" data-metric-cap="5000">5K+</div>
+                    <div class="metric-huge-digits metric-numerical" data-metric-cap="5000">0+</div>
                     <div class="metric-meta-label">Properties Listed</div>
-
                 </div>
 
                 <div class="metric-premium-box">
                     <div class="metric-icon-box">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
                     </div>
-                    <div class="metric-huge-digits metric-numerical" data-metric-cap="98">98%</div>
+                    <div class="metric-huge-digits metric-numerical" data-metric-cap="98">0%</div>
                     <div class="metric-meta-label">Success Rate</div>
-
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Visual Reference Placeholders for Future Custom Assets styling layout links -->
-    <div style="display:none;">
-        <img src="image_84361e.jpg" alt="Premium Feature Blueprint Map">
-        <img src="image_843638.jpg" alt="Ecosystem Trust Metrics Panel">
-    </div>
-
-    <!-- 6. Engineered Enterprise Core Suites -->
     <section id="services" class="editorial-matrix-section">
         <div class="container-editorial">
             <div class="section-meta-block">
@@ -256,7 +243,6 @@
             </div>
             
             <div class="asymmetric-matrix-grid">
-                <!-- Suite Card 1 -->
                 <div class="matrix-cell">
                     <div class="cell-spatial-header">
                         <span class="cell-index">01 / SYSTEMS</span>
@@ -268,7 +254,6 @@
                     <p class="cell-description">Integrate complex inventory schedules, real-time logistics, procurement pipelines, and materials ledgers inside a high-throughput enterprise ecosystem.</p>
                 </div>
                 
-                <!-- Suite Card 2 -->
                 <div class="matrix-cell">
                     <div class="cell-spatial-header">
                         <span class="cell-index">02 / CRM</span>
@@ -280,7 +265,6 @@
                     <p class="cell-description">Standardize cross-tier communication lines among vendors, internal contractors, and field architects with clean audit visibility loops.</p>
                 </div>
 
-                <!-- Suite Card 3 -->
                 <div class="matrix-cell">
                     <div class="cell-spatial-header">
                         <span class="cell-index">03 / MANAGEMENT</span>
@@ -295,7 +279,6 @@
         </div>
     </section>
 
-    <!-- 7. About & Values Editorial Split -->
     <section id="about" class="about-corporate-canvas">
         <div class="container-editorial">
             <div class="asymmetric-split-layout">
@@ -341,7 +324,6 @@
         </div>
     </section>
 
-    <!-- 8. Deep Systems Call To Action -->
     <section id="contact" class="architectural-cta-block">
         <div class="container-editorial">
             <div class="cta-monolithic-panel">
@@ -354,7 +336,6 @@
         </div>
     </section>
 
-    <!-- 9. Structural Multi-Column Footer -->
     <footer class="architectural-footer">
         <div class="container-editorial footer-grid-system">
             
@@ -395,19 +376,17 @@
         <div class="container-editorial footer-base-strip">
             <p class="copyright-notice">&copy; 2026 Apni Estate. Systems engineered cleanly alongside enterprise interface guidelines.</p>
             <div class="legal-social-anchors">
-                <a href="#">LinkedIn Architecture</a>
-                <a href="#">System Status Matrix</a>
+                <a href="#" class="social-anchor">LinkedIn Architecture</a>
+                <a href="#" class="social-anchor">System Status Matrix</a>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
-        <div id="auth-modal" class="auth-modal-overlay">
+    <div id="auth-modal" class="auth-modal-overlay">
         <div class="auth-modal-scaffold">
             <button id="auth-modal-close" class="auth-close-trigger">&times;</button>
             
             <div class="auth-form-container">
-                
                 <div id="sign-in-pane" class="auth-pane">
                     <h3 class="auth-pane-title">Welcome Back</h3>
                     <p class="auth-pane-subtitle">Access your enterprise PropTech dashboard node.</p>
@@ -453,10 +432,10 @@
                         Already registered? <a href="#" id="trigger-to-signin" class="auth-inline-link">Sign in instead</a>
                     </p>
                 </div>
-
             </div>
         </div>
     </div>
 
+    <script src="js/main.js"></script>
 </body>
 </html>
