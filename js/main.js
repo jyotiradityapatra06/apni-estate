@@ -1,14 +1,14 @@
 /**
- * Apni Estate — Dynamic Automation Core (Polished & Pure JavaScript)
+ * Apni Estate — Modern SaaS Automation Core
+ * High-performance, lightweight, responsive client-side interactions.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
     
     // ==========================================================================
-    // 1. FLUID STICKY HEADER (Optimized with requestAnimationFrame)
+    // 1. FLUID STICKY HEADER (Glassmorphism on Scroll)
     // ==========================================================================
-    const navAxis = document.querySelector(".nav-axis");
-    const navWrapper = document.querySelector(".nav-wrapper");
+    const navAxis = document.getElementById("main-nav");
     let isTicking = false;
 
     const updateHeader = () => {
@@ -16,12 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (window.scrollY > 40) {
             navAxis.classList.add("scrolled");
-            navAxis.style.background = "rgba(255, 255, 255, 0.95)";
-            navAxis.style.boxShadow = "0 10px 30px rgba(15, 23, 42, 0.05)";
         } else {
             navAxis.classList.remove("scrolled");
-            navAxis.style.background = "rgba(255, 255, 255, 0.8)";
-            navAxis.style.boxShadow = "none";
         }
         isTicking = false;
     };
@@ -34,12 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: true });
 
     // ==========================================================================
-    // 2. SCROLLSPY & CLICK NAVIGATION ACTIVE STATE
+    // 2. SCROLLSPY ACTIVE STATE NAVIGATION
     // ==========================================================================
     const navItems = document.querySelectorAll(".nav-item");
     const sections = document.querySelectorAll("main, section[id]");
 
-    // Click Handler for Instant Feedback
+    // Click navigation item active trigger
     navItems.forEach(item => {
         item.addEventListener("click", () => {
             navItems.forEach(nav => nav.classList.remove("active"));
@@ -47,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Intersection Observer for Automatic Scroll Tracking
+    // Intersection Observer for scroll tracking
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -69,25 +65,24 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach(section => sectionObserver.observe(section));
 
     // ==========================================================================
-    // 3. HIGH-PERFORMANCE FLUID COUNTER ENGINE
+    // 3. HIGH-PERFORMANCE STATS COUNTER ENGINE (Incremental Scroll Reveal)
     // ==========================================================================
     const numericNodes = document.querySelectorAll(".metric-numerical");
     const easeOutQuad = (t) => t * (2 - t);
 
-    const accelerateCounters = (node) => {
+    const animateCounters = (node) => {
         const capValueStr = node.getAttribute("data-metric-cap");
         if (!capValueStr) return;
         const capValue = parseInt(capValueStr, 10);
         if (isNaN(capValue)) return;
 
-        const duration = 2000;
+        const duration = 2000; // 2 seconds animation
         let startTime = null;
 
-        const counterEngine = (currentTime) => {
+        const counterStep = (currentTime) => {
             if (!startTime) startTime = currentTime;
             const runtime = currentTime - startTime;
             const progress = Math.min(runtime / duration, 1);
-            
             const easedProgress = easeOutQuad(progress);
             const currentVal = easedProgress * capValue;
 
@@ -97,29 +92,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else {
                     node.textContent = Math.round(currentVal).toLocaleString() + (capValue === 98 ? "%" : "+");
                 }
-                requestAnimationFrame(counterEngine);
+                requestAnimationFrame(counterStep);
             } else {
                 if (capValue === 5) {
-                    node.textContent = "4.9";
+                    node.textContent = "4.9"; // premium aesthetic detail
                 } else {
                     node.textContent = capValue.toLocaleString() + (capValue === 98 ? "%" : "+");
                 }
             }
         };
         
-        requestAnimationFrame(counterEngine);
+        requestAnimationFrame(counterStep);
     };
 
-    // ==========================================================================
-    // 4. NATIVE INTERSECTION OBSERVERS & STAGGER ANIMATIONS
-    // ==========================================================================
-    const globalObserver = new IntersectionObserver((entries, observer) => {
+    // Native Intersection Observer for card revealing and counter triggers
+    const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const target = entry.target;
                 
                 if (target.classList.contains("metric-numerical")) {
-                    accelerateCounters(target);
+                    animateCounters(target);
                 } else {
                     target.classList.add("revealed");
                 }
@@ -129,96 +122,73 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, { 
         threshold: 0.05, 
-        rootMargin: "0px 0px -30px 0px" 
+        rootMargin: "0px 0px -40px 0px" 
     });
 
-    numericNodes.forEach(node => globalObserver.observe(node));
+    // Observe counter metrics
+    numericNodes.forEach(node => revealObserver.observe(node));
 
-    const animationSelectors = [
-        ".matrix-cell", 
+    // Setup reveal scaffolds for grid elements
+    const revealSelectors = [
         ".feature-premium-card", 
-        ".manifesto-element", 
-        ".hero-textuality", 
-        ".recognition-pill-glass"
+        ".matrix-cell", 
+        ".recognition-pill-glass", 
+        ".timeline-step",
+        ".comparison-block",
+        ".metric-premium-box"
     ].join(", ");
 
-    document.querySelectorAll(animationSelectors).forEach(card => {
+    document.querySelectorAll(revealSelectors).forEach(card => {
         card.classList.add("reveal-scaffold");
-        globalObserver.observe(card);
+        revealObserver.observe(card);
     });
 
-    // Stagger Transition Delays for grid layouts
+    // Stagger delays for beautiful sequential transition entrance
     document.querySelectorAll(".feature-premium-card").forEach((card, index) => {
-        card.style.transitionDelay = `${index * 80}ms`;
+        card.style.transitionDelay = `${(index % 3) * 80}ms`;
     });
 
     document.querySelectorAll(".matrix-cell").forEach((card, index) => {
-        card.style.transitionDelay = `${index * 60}ms`;
+        card.style.transitionDelay = `${(index % 3) * 60}ms`;
     });
 
-    // ==========================================================================
-    // 5. MODAL INTERACTION CONTROLLER
-    // ==========================================================================
-    const authModal = document.getElementById("auth-modal");
-    const loginTriggers = document.querySelectorAll(".login-link");
-    const closeTrigger = document.getElementById("auth-modal-close");
-    
-    const signInPane = document.getElementById("sign-in-pane");
-    const signUpPane = document.getElementById("sign-up-pane");
-    const toSignUp = document.getElementById("trigger-to-signup");
-    const toSignIn = document.getElementById("trigger-to-signin");
-
-    // Open Modal
-    loginTriggers.forEach(trigger => {
-        trigger.addEventListener("click", (e) => {
-            e.preventDefault();
-            if (authModal) {
-                authModal.classList.add("active-modal");
-                document.body.style.overflow = "hidden";
-            }
-        });
+    document.querySelectorAll(".timeline-step").forEach((card, index) => {
+        card.style.transitionDelay = `${index * 80}ms`;
     });
 
-    // Close Modal
-    if (closeTrigger && authModal) {
-        closeTrigger.addEventListener("click", () => {
-            authModal.classList.remove("active-modal");
-            document.body.style.overflow = "auto";
-        });
 
-        authModal.addEventListener("click", (e) => {
-            if (e.target === authModal) {
-                authModal.classList.remove("active-modal");
-                document.body.style.overflow = "auto";
-            }
-        });
-    }
 
-    // Global Escape Key Listener for Modals
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && authModal && authModal.classList.contains("active-modal")) {
-            authModal.classList.remove("active-modal");
-            document.body.style.overflow = "auto";
+    // ==========================================================================
+    // 6. HIGH-POLISH FAQ ACCORDION TRANSITIONS
+    // ==========================================================================
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+        const trigger = item.querySelector(".faq-trigger");
+        const response = item.querySelector(".faq-response");
+
+        if (trigger && response) {
+            trigger.addEventListener("click", () => {
+                const isActive = item.classList.contains("active-faq");
+
+                // Collapse all active FAQ accordions
+                faqItems.forEach(i => {
+                    i.classList.remove("active-faq");
+                    const resp = i.querySelector(".faq-response");
+                    if (resp) resp.style.maxHeight = "0px";
+                });
+
+                // If clicked wasn't active, expand it dynamically
+                if (!isActive) {
+                    item.classList.add("active-faq");
+                    response.style.maxHeight = response.scrollHeight + "px";
+                }
+            });
         }
     });
 
-    // Sign-In <=> Sign-Up Switcher
-    if (toSignUp && toSignIn && signInPane && signUpPane) {
-        toSignUp.addEventListener("click", (e) => {
-            e.preventDefault();
-            signInPane.classList.add("hidden-pane");
-            signUpPane.classList.remove("hidden-pane");
-        });
-
-        toSignIn.addEventListener("click", (e) => {
-            e.preventDefault();
-            signUpPane.classList.add("hidden-pane");
-            signInPane.classList.remove("hidden-pane");
-        });
-    }
-
     // ==========================================================================
-    // 6. RESPONSIVE MOBILE MENU CONTROLLER
+    // 7. RESPONSIVE MOBILE MENU CONTROLLER (Body Overflow Locking)
     // ==========================================================================
     const menuTrigger = document.getElementById("mobile-menu-trigger");
     const linksMenu = document.getElementById("nav-links-menu");
@@ -230,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
             menuTrigger.classList.toggle("open-icon");
             linksMenu.classList.toggle("open-menu");
             
-            // Toggle body overflow based on menu state
+            // Toggle body scroll locking when mobile navigation menu is open
             document.body.style.overflow = linksMenu.classList.contains("open-menu") ? "hidden" : "auto";
         });
 
@@ -242,6 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
+        // Close menu if clicking outside of navigation bounds
         document.addEventListener("click", (e) => {
             if (!linksMenu.contains(e.target) && !menuTrigger.contains(e.target)) {
                 menuTrigger.classList.remove("open-icon");
@@ -252,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================================================
-    // 7. HIGH-PERFORMANCE SCROLL PROGRESS BAR
+    // 8. SCROLL PROGRESS INDICATOR
     // ==========================================================================
     const scrollBar = document.getElementById("scrollBar");
     
@@ -267,14 +238,81 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================================================
-    // 8. HERO DASHBOARD PARALLAX EFFECT
+    // 9. MODAL INTERACTION CONTROLLER (Sign-In / Sign-Up Switcher)
     // ==========================================================================
-    const heroDashboard = document.querySelector(".hero-dashboard-mockup");
+    const authModal = document.getElementById("auth-modal");
+    const loginTriggers = document.querySelectorAll(".login-link, .mobile-login-btn, #desktop-btn-login");
+    const closeTrigger = document.getElementById("auth-modal-close");
     
-    if (heroDashboard) {
-        window.addEventListener("scroll", () => {
-            const depth = window.scrollY * 0.05;
-            heroDashboard.style.transform = `perspective(1000px) rotateY(-5deg) rotateX(2deg) translateY(${depth}px)`;
-        }, { passive: true });
+    const signInPane = document.getElementById("sign-in-pane");
+    const signUpPane = document.getElementById("sign-up-pane");
+    const toSignUp = document.getElementById("trigger-to-signup");
+    const toSignIn = document.getElementById("trigger-to-signin");
+
+    // Open Modal dialog
+    loginTriggers.forEach(trigger => {
+        trigger.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (authModal) {
+                authModal.classList.add("active-modal");
+                document.body.style.overflow = "hidden";
+            }
+        });
+    });
+
+    // Close Modal dialog
+    if (closeTrigger && authModal) {
+        closeTrigger.addEventListener("click", () => {
+            authModal.classList.remove("active-modal");
+            document.body.style.overflow = "auto";
+        });
+
+        authModal.addEventListener("click", (e) => {
+            if (e.target === authModal) {
+                authModal.classList.remove("active-modal");
+                document.body.style.overflow = "auto";
+            }
+        });
+    }
+
+    // Escape Key trigger listener for modal overlays
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && authModal && authModal.classList.contains("active-modal")) {
+            authModal.classList.remove("active-modal");
+            document.body.style.overflow = "auto";
+        }
+    });
+
+    // Sign-In <=> Sign-Up Swivel panes
+    if (toSignUp && toSignIn && signInPane && signUpPane) {
+        toSignUp.addEventListener("click", (e) => {
+            e.preventDefault();
+            signInPane.classList.add("hidden-pane");
+            signUpPane.classList.remove("hidden-pane");
+        });
+
+        toSignIn.addEventListener("click", (e) => {
+            e.preventDefault();
+            signUpPane.classList.add("hidden-pane");
+            signInPane.classList.remove("hidden-pane");
+        });
+    }
+
+    // Demo pre-fill helper
+    const demoFillTrigger = document.getElementById("demo-fill-trigger");
+    const signInEmailInput = document.getElementById("sign-in-email");
+    const signInPasswordInput = document.getElementById("sign-in-password");
+
+    if (demoFillTrigger && signInEmailInput && signInPasswordInput) {
+        demoFillTrigger.addEventListener("click", () => {
+            signInEmailInput.value = "demo@apniestate.com";
+            signInPasswordInput.value = "admin123";
+            demoFillTrigger.style.borderColor = "var(--primary)";
+            demoFillTrigger.style.backgroundColor = "rgba(38, 72, 231, 0.08)";
+            setTimeout(() => {
+                demoFillTrigger.style.borderColor = "";
+                demoFillTrigger.style.backgroundColor = "";
+            }, 600);
+        });
     }
 });
