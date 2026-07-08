@@ -1,30 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apni Estate — Enterprise PropTech Architectures</title>
-    <meta name="description" content="PropTech infrastructure platforms tailored for Indian enterprise construction. Recognized by the Directorate of Information Technology, Government of Tripura.">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apni Estate | Enterprise-Grade AI Construction ERP & Marketplace</title>
+    <meta name="description" content="Manage master labor forces, track material forecasts, geo-tagged project tracking, corporate finance, and site CRM from India's first AI-powered unified construction ERP platform." />
+    <!-- Preload fonts to avoid layout shift -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/index.css" />
 
+  </head>
+  <body>
+
+    <!-- Scroll progress bar indicator -->
+    <div class="scroll-progress-axis">
+        <div class="scroll-progress-fill" id="scrollBar"></div>
+    </div>
+
+    <!-- NAVBAR INTERFACE AXIS -->
     <nav class="nav-axis">
         <div class="nav-wrapper">
             <a href="#" class="brand-monogram">
-                <img
-                    src="WhatsApp Image 2026-07-04 at 1.29.47 PM (1).jpeg"
-                    alt="Apni Estate Logo"
-                    class="logo-img-main"
-                    width="42"
-                    height="42"
-                />
-                <span class="brand-name">APNI <span class="weight-light text-accent">ESTATE</span></span>
+                <div class="logo-container">
+                    <img
+                        src="WhatsApp Image 2026-07-04 at 1.29.47 PM (1).jpeg"
+                        alt="Apni Estate Logo"
+                        class="logo-img-main"
+                        onerror="this.style.display='none'; this.parentNode.innerHTML='🏢';"
+                    />
+                </div>
+                <span class="brand-name">APNI <span class="text-accent">ESTATE</span></span>
             </a>
             
             <button class="mobile-nav-toggle" id="mobile-menu-trigger" aria-label="Toggle navigation">
@@ -35,65 +41,162 @@
             
             <div class="nav-links-cluster" id="nav-links-menu">
                 <a href="#home" class="nav-item active">Home</a>
+                <a href="#target-audience" class="nav-item">Solutions</a>
+                <a href="#modules" class="nav-item">Modules</a>
+                <a href="#ai-features" class="nav-item">AI Engine</a>
+                <a href="#marketplace" class="nav-item">Marketplace</a>
                 <a href="#about" class="nav-item">About Us</a>
-                <a href="#ai-features" class="nav-item">AI Features</a>
-                <a href="#services" class="nav-item">Properties</a>
                 <a href="#contact" class="nav-item">Contact</a>
                 
                 <div class="mobile-only-actions">
                     <a href="#" class="login-link mobile-login-btn">Log in</a>
-                    <a href="#contact" class="action-trigger-premium mobile-cta-btn">Get Started →</a>
+                    <a href="#contact" class="action-trigger-premium mobile-cta-btn">
+                        <span>Book Free Demo</span>
+                        <span class="trigger-arrow">→</span>
+                    </a>
                 </div>
             </div>
             
             <div class="nav-action-block">
                 <a href="#" class="login-link">Log in</a>
                 <a href="#contact" class="action-trigger-premium">
-                    <span>Get Started</span>
+                    <span>Book Free Demo</span>
                     <span class="trigger-arrow">→</span>
                 </a>
             </div>
         </div>
     </nav>
 
+    <!-- EDITORIAL HERO CANVAS -->
     <main id="home" class="hero-canvas">
-        <div class="hero-container-fluid">
+        <div class="container-editorial">
             <div class="hero-asymmetric-grid">
                 
                 <div class="hero-textuality">
                     <div class="editorial-line-tag">
-                        <span class="line-dot"></span> Modern PropTech Architecture
+                        <span class="line-dot"></span> Next-Gen Construction Technology
                     </div>
                     <h1 class="display-headline">
-                        Empowering Construction Businesses with <span class="stylized-serif">Smart Digital Solutions</span>
+                        India's First AI-Powered <span class="stylized-serif">Construction ERP</span> & Marketplace
                     </h1>
                     <p class="hero-paragraph-lead">
-                        Simplify project management, customer relationships and business operations using Apni Estate's structural Construction ERP and enterprise CRM suites.
+                        Unify master labor rosters, material forecasting ledgers, real-time geo-fenced timelines, corporate finances, and site sales into one single, highly secure, and intelligent workspace.
                     </p>
+                    
                     <div class="hero-cta-grouping">
-                        <a href="#contact" class="prime-cta">Book Demo</a>
-                        <a href="#services" class="secondary-anchor-link">Explore Systems Architecture <span class="arrow-diagonal">↗</span></a>
+                        <a href="#contact" class="prime-cta">Book Your Free Demo</a>
+                        <a href="#modules" class="secondary-anchor-link">Explore ERP Modules <span class="arrow-diagonal">↗</span></a>
+                    </div>
+
+                    <!-- Trust indicators vertically aligned under CTA -->
+                    <div class="trust-indicators-row">
+                        <div class="trust-item">
+                            <span class="trust-icon">✓</span> Govt. of Tripura Approved
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-icon">✓</span> Startup India Registered
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-icon">✓</span> Enterprise-Grade Security
+                        </div>
                     </div>
                 </div>
 
+                <!-- Right Column: Interactive Dashboard Mockup -->
                 <div class="hero-graphic-mainframe">
-                    <div class="vector-viewport">
-                        <svg viewBox="0 0 600 500" fill="none" xmlns="http://www.w3.org/2000/svg" class="handcrafted-svg">
-                            <g opacity="0.15" stroke="#2563EB" stroke-width="1">
-                                <path d="M 0,100 L 600,100 M 0,200 L 600,200 M 0,300 L 600,300 M 0,400 L 600,400" />
-                                <path d="M 100,0 L 100,500 M 200,0 L 200,500 M 300,0 L 300,500 M 400,0 L 400,500 M 500,0 L 500,500" />
-                            </g>
-                            <path d="M100 420 L300 280 L500 420" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="4 4" />
-                            <path d="M100 260 L300 120 L500 260" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="4 4" />
-                            <line x1="100" y1="260" x2="100" y2="420" stroke="#2563EB" stroke-width="2"/>
-                            <line x1="300" y1="120" x2="300" y2="280" stroke="#1E3A8A" stroke-width="3"/>
-                            <line x1="500" y1="260" x2="500" y2="420" stroke="#2563EB" stroke-width="2"/>
-                            <path d="M300 120 L420 200 L300 280 L180 200 Z" fill="rgba(37, 99, 235, 0.08)" stroke="#2563EB" stroke-width="2"/>
-                            <path d="M300 280 L420 360 L300 440 L180 360 Z" fill="rgba(27, 58, 138, 0.04)" stroke="#1E3A8A" stroke-width="1.5"/>
-                            <circle cx="300" cy="120" r="5" fill="#3B82F6"/>
-                            <circle cx="180" cy="200" r="3" fill="#2563EB"/>
-                            <circle cx="420" cy="200" r="3" fill="#2563EB"/>
-                        </svg>
+                    <div class="hero-dashboard-mockup">
+                        <!-- Mockup Header -->
+                        <div class="mockup-header">
+                            <div class="mockup-header-dots">
+                                <span class="mockup-dot red"></span>
+                                <span class="mockup-dot yellow"></span>
+                                <span class="mockup-dot green"></span>
+                            </div>
+                            <div class="mockup-header-search"></div>
+                        </div>
+                        
+                        <!-- Mockup Body -->
+                        <div class="mockup-body">
+                            <!-- Sidebar -->
+                            <div class="mockup-sidebar">
+                                <div class="mockup-sidebar-item active"></div>
+                                <div class="mockup-sidebar-item"></div>
+                                <div class="mockup-sidebar-item"></div>
+                                <div class="mockup-sidebar-item"></div>
+                            </div>
+                            
+                            <!-- Main Content Area -->
+                            <div class="mockup-content">
+                                <!-- Top Stats -->
+                                <div class="mockup-top-stats">
+                                    <div class="mockup-stat-card">
+                                        <span class="mockup-stat-title">Active Sites</span>
+                                        <span class="mockup-stat-val">12 Sites</span>
+                                        <div class="mockup-stat-progress">
+                                            <div class="mockup-stat-progress-bar" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-stat-card">
+                                        <span class="mockup-stat-title">Labour Rostered</span>
+                                        <span class="mockup-stat-val">482 Pax</span>
+                                        <div class="mockup-stat-progress">
+                                            <div class="mockup-stat-progress-bar" style="width: 88%; background: #10B981;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-stat-card">
+                                        <span class="mockup-stat-title">Total BOQ Reconciled</span>
+                                        <span class="mockup-stat-val">94.6%</span>
+                                        <div class="mockup-stat-progress">
+                                            <div class="mockup-stat-progress-bar" style="width: 94%; background: #3B82F6;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Charts and alerts -->
+                                <div class="mockup-interactive-grid">
+                                    <div class="mockup-chart-container">
+                                        <span class="mockup-chart-title">
+                                            Material forecasting Burn Rate
+                                            <span class="mockup-chart-status">AI Optimized</span>
+                                        </span>
+                                        <!-- Mock CSS/SVG chart -->
+                                        <svg viewBox="0 0 200 80" class="mockup-chart-svg">
+                                            <path d="M0 60 Q25 40 50 45 T100 20 T150 35 T200 10" fill="none" stroke="#2563EB" stroke-width="2" />
+                                            <path d="M0 60 Q25 40 50 45 T100 20 T150 35 T200 10 L200 80 L0 80 Z" fill="rgba(37, 99, 235, 0.05)" />
+                                            <line x1="0" y1="80" x2="200" y2="80" stroke="#E2E8F0" />
+                                            <!-- Threshold line -->
+                                            <line x1="0" y1="35" x2="200" y2="35" stroke="#EF4444" stroke-dasharray="2 2" />
+                                        </svg>
+                                    </div>
+                                    
+                                    <div class="mockup-alerts-container">
+                                        <span class="mockup-alerts-title">AI Engine Feed</span>
+                                        <div class="mockup-alert-item">
+                                            🚨 Concrete shipment delayed 2h at Site 4. Re-allocation initiated.
+                                        </div>
+                                        <div class="mockup-alert-item info">
+                                            ✓ Overtime logs auto-reconciled with wage sheet.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badges -->
+                        <div class="mockup-floating-badge badge-left">
+                            <div class="floating-badge-icon green">📈</div>
+                            <div class="floating-badge-meta">
+                                <span class="floating-badge-title">Budget Efficiency</span>
+                                <span class="floating-badge-val">+14.2% Saved</span>
+                            </div>
+                        </div>
+                        <div class="mockup-floating-badge badge-right">
+                            <div class="floating-badge-icon blue">⚡</div>
+                            <div class="floating-badge-meta">
+                                <span class="floating-badge-title">AI Delay Risk Flag</span>
+                                <span class="floating-badge-val">0.0% Critical</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -101,6 +204,7 @@
         </div>
     </main>
 
+    <!-- GOVERNMENT RECOGNITIONS -->
     <section class="recognition-strut">
         <div class="container-editorial">
             <div class="recognition-grid-layout">
@@ -112,7 +216,12 @@
                     </div>
                     <div class="pill-divider"></div>
                     <div class="pill-crest-right">
-                        <img src="startup-india-logo-m5kXmJPN.webp" alt="Startup India Logo" class="brand-badge-img badge-width-long">
+                        <img 
+                            src="startup-india-logo-m5kXmJPN.webp" 
+                            alt="Startup India Logo" 
+                            class="brand-badge-img"
+                            onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-weight:700;font-size:12px;color:#64748B;\'>STARTUP INDIA</span>';"
+                        >
                     </div>
                 </div>
 
@@ -124,7 +233,12 @@
                     </div>
                     <div class="pill-divider"></div>
                     <div class="pill-crest-right">
-                        <img src="ST Logo.webp" alt="Startup Tripura Logo" class="brand-badge-img badge-width-tall">
+                        <img 
+                            src="ST Logo.webp" 
+                            alt="Startup Tripura Logo" 
+                            class="brand-badge-img"
+                            onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-weight:700;font-size:12px;color:#64748B;\'>STARTUP TRIPURA</span>';"
+                        >
                     </div>
                 </div>
 
@@ -135,160 +249,516 @@
                     </div>
                     <div class="pill-divider"></div>
                     <div class="pill-crest-right">
-                        <img src="DIT LOGO.webp" alt="DIT Tripura Logo" class="brand-badge-img badge-width-circular">
+                        <img 
+                            src="DIT LOGO.webp" 
+                            alt="DIT Tripura Logo" 
+                            class="brand-badge-img"
+                            onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-weight:700;font-size:12px;color:#64748B;\'>DIT TRIPURA</span>';"
+                        >
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- MARQUEE RUNNING STRIP -->
+    <div class="marquee-feature-strip">
+        <div class="marquee-content">
+            <span>AI Workforce Allocation • </span>
+            <span>Material Forecasting • </span>
+            <span>Geo Tagged Monitoring • </span>
+            <span>WhatsApp CRM • </span>
+            <span>Marketplace • </span>
+            <span>Project Analytics • </span>
+            <span>BOQ Reconciliations • </span>
+            <span>Finance Ledgers • </span>
+            <span>Inventory Balance Sheets • </span>
+            <!-- Duplicated content for seamless loop -->
+            <span>AI Workforce Allocation • </span>
+            <span>Material Forecasting • </span>
+            <span>Geo Tagged Monitoring • </span>
+            <span>WhatsApp CRM • </span>
+            <span>Marketplace • </span>
+            <span>Project Analytics • </span>
+            <span>BOQ Reconciliations • </span>
+            <span>Finance Ledgers • </span>
+            <span>Inventory Balance Sheets • </span>
+        </div>
+    </div>
+
+    <!-- TARGET AUDIENCE (SOLUTIONS) -->
+    <section id="target-audience" class="problem-resolution-axis target-audience-axis">
+        <div class="container-editorial">
+            <div class="section-badge-center">Tailored Solutions</div>
+            <h2 class="title-center-large">Built For Every Construction Stakeholder</h2>
+            <p class="paragraph-center-lead">Discover how Apni Estate optimizes operations for builders, contractors, developers, and material suppliers.</p>
+            
+            <div class="features-quad-grid">
+                <div class="feature-premium-card audience-card">
+                    <div class="audience-icon">🏗️</div>
+                    <h3 class="card-title-sub">Builders</h3>
+                    <p class="cell-description">Gain structural visibility across multiple active project sites, reduce structural leakages, and stabilize deployment schedules.</p>
+                    <a href="#contact" class="learn-more-link">
+                        <span>Learn more</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+                <div class="feature-premium-card audience-card">
+                    <div class="audience-icon">👷</div>
+                    <h3 class="card-title-sub">Contractors</h3>
+                    <p class="cell-description">Streamline manual site labor billing sheets, assign strict daily progress milestones, and minimize site-level concrete and steel wastage.</p>
+                    <a href="#contact" class="learn-more-link">
+                        <span>Learn more</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+                <div class="feature-premium-card audience-card">
+                    <div class="audience-icon">🏢</div>
+                    <h3 class="card-title-sub">Developers</h3>
+                    <p class="cell-description">Track large-scale multi-phase master projects from dynamic Gantt diagrams, and automate updates straight to buyer portals.</p>
+                    <a href="#contact" class="learn-more-link">
+                        <span>Learn more</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+                <div class="feature-premium-card audience-card">
+                    <div class="audience-icon">📦</div>
+                    <h3 class="card-title-sub">Material Suppliers</h3>
+                    <p class="cell-description">Connect with validated commercial builder procurement lists and deliver material indents cleanly via transparent tracking channels.</p>
+                    <a href="#contact" class="learn-more-link">
+                        <span>Learn more</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHALLENGES WE RESOLVE -->
+    <section class="problem-resolution-axis">
+        <div class="container-editorial">
+            <div class="section-badge-center">Challenges Eliminated</div>
+            <h2 class="title-center-large">The Cost of Fragmented Operations</h2>
+            <p class="paragraph-center-lead">Traditional real estate developments hemorrhage huge margins through paper ledgers. Here is how we build operational resilience.</p>
+            
+            <div class="features-quad-grid">
+                <div class="feature-premium-card problem-card">
+                    <h3 class="card-title-sub">Labor Absenteeism</h3>
+                    <p class="cell-description">Unverified manual registers cause ghost billing. Stop attendance leakage through instant geo-fenced entry logs.</p>
+                    <a href="#contact" class="learn-more-link">
+                        <span>Solve with AI</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+                <div class="feature-premium-card problem-card">
+                    <h3 class="card-title-sub">Inventory Shrinkage</h3>
+                    <p class="cell-description">Loose stockpiles vanish without audit history. Map materials continuously from PO to physical site utilization.</p>
+                    <a href="#contact" class="learn-more-link">
+                        <span>Solve with AI</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+                <div class="feature-premium-card problem-card">
+                    <h3 class="card-title-sub">Execution Slippage</h3>
+                    <p class="cell-description">Misaligned contractors cause compounded milestone delays. Map critical execution paths with proactive AI warning triggers.</p>
+                    <a href="#contact" class="learn-more-link">
+                        <span>Solve with AI</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+                <div class="feature-premium-card problem-card">
+                    <h3 class="card-title-sub">Cash Leakages</h3>
+                    <p class="cell-description">Subcontractor adjustments inflate overhead costs. Bind accounts and material requests together for transparent approvals.</p>
+                    <a href="#contact" class="learn-more-link">
+                        <span>Solve with AI</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENTERPRISE COMPARISON MATRIX (REDESIGNED COMPARISON SECTION) -->
+    <section class="comparison-matrix-axis">
+        <div class="container-editorial">
+            <div class="section-badge-center">Enterprise Benchmarks</div>
+            <h2 class="title-center-large">The Operational Shift</h2>
+            <p class="paragraph-center-lead">Say goodbye to disconnected software and manual paper rosters. Apni Estate consolidates every dimension of construction management into a single, high-fidelity workflow.</p>
+            
+            <div class="comparison-grid-scaffold" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px;">
+                <!-- Left: Legacy Chaos -->
+                <div class="comparison-block" style="background: var(--bg-main); border: 1px solid rgba(226, 232, 240, 0.8); border-radius: var(--radius-premium); padding: 48px;">
+                    <div class="comparison-block-title" style="font-size: 24px; font-weight: 800; margin-bottom: 12px; color: #64748B; display: flex; align-items: center; gap: 12px;">
+                        <span style="font-size: 28px;">⚠️</span> Legacy Methods
+                    </div>
+                    <p style="font-size: 14px; color: var(--text); margin-bottom: 32px;">Fragmented, error-prone spreadsheets and manual follow-ups that lead to margin leaks and delays.</p>
+                    
+                    <ul class="comparison-list" style="display: flex; flex-direction: column; gap: 24px; list-style: none;">
+                        <li style="display: flex; align-items: flex-start; gap: 16px;">
+                            <div style="width: 20px; height: 20px; border-radius: 50%; background: rgba(239, 68, 68, 0.1); color: #EF4444; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 11px; flex-shrink: 0; margin-top: 2px;">✕</div>
+                            <div>
+                                <strong style="color: var(--dark); font-size: 15px; display: block; margin-bottom: 2px;">Manual Labor Logs</strong>
+                                <span style="font-size: 14px; color: var(--text);">Unverified paper sheets prone to ghost-billing, absenteeism, and inflated daily wages.</span>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 16px;">
+                            <div style="width: 20px; height: 20px; border-radius: 50%; background: rgba(239, 68, 68, 0.1); color: #EF4444; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 11px; flex-shrink: 0; margin-top: 2px;">✕</div>
+                            <div>
+                                <strong style="color: var(--dark); font-size: 15px; display: block; margin-bottom: 2px;">Blind Material Burn</strong>
+                                <span style="font-size: 14px; color: var(--text);">Retrospective ledger auditing and inventory leaks from dispatch to actual usage.</span>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 16px;">
+                            <div style="width: 20px; height: 20px; border-radius: 50%; background: rgba(239, 68, 68, 0.1); color: #EF4444; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 11px; flex-shrink: 0; margin-top: 2px;">✕</div>
+                            <div>
+                                <strong style="color: var(--dark); font-size: 15px; display: block; margin-bottom: 2px;">Reactive Delay Handling</strong>
+                                <span style="font-size: 14px; color: var(--text);">No forward warning on subcontractor slips, causing compounded, expensive timeline overruns.</span>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 16px;">
+                            <div style="width: 20px; height: 20px; border-radius: 50%; background: rgba(239, 68, 68, 0.1); color: #EF4444; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 11px; flex-shrink: 0; margin-top: 2px;">✕</div>
+                            <div>
+                                <strong style="color: var(--dark); font-size: 15px; display: block; margin-bottom: 2px;">Manual SMS Updates</strong>
+                                <span style="font-size: 14px; color: var(--text);">Disconnected WhatsApp messages, manually prepared reports, and slow receipt delivery.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Right: Apni Estate Premium Hub -->
+                <div class="comparison-block premium-block" style="background: var(--white); border: 2px solid var(--primary); border-radius: var(--radius-premium); padding: 48px; box-shadow: var(--shadow-lg); position: relative; overflow: hidden;">
+                    <!-- Subtle brand color split-geometric decoration on background matching image circle! -->
+                    <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(90deg, var(--primary) 50%, var(--yellow-vibrant) 50%); opacity: 0.15; pointer-events: none;"></div>
+                    
+                    <div class="comparison-block-title" style="font-size: 24px; font-weight: 800; margin-bottom: 12px; color: var(--primary); display: flex; align-items: center; gap: 12px;">
+                        <div class="brand-shape brand-shape-hexagon" style="width: 32px; height: 32px; font-size: 10px;"></div>
+                        Apni Estate AI ERP
+                    </div>
+                    <p style="font-size: 14px; color: var(--dark); margin-bottom: 32px; font-weight: 500;">India's first completely unified platform driving efficiency, margin control, and total site predictability.</p>
+                    
+                    <ul class="comparison-list" style="display: flex; flex-direction: column; gap: 24px; list-style: none;">
+                        <li style="display: flex; align-items: flex-start; gap: 16px;">
+                            <div style="width: 20px; height: 20px; border-radius: 50%; background: rgba(38, 72, 231, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 11px; flex-shrink: 0; margin-top: 2px;">✓</div>
+                            <div>
+                                <strong style="color: var(--dark); font-size: 15px; display: block; margin-bottom: 2px;">AI Labor Route Optimization</strong>
+                                <span style="font-size: 14px; color: var(--text);">Real-time geo-fenced checks with automated dispatch, shift reconciliation, and immediate wage sheets.</span>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 16px;">
+                            <div style="width: 20px; height: 20px; border-radius: 50%; background: rgba(38, 72, 231, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 11px; flex-shrink: 0; margin-top: 2px;">✓</div>
+                            <div>
+                                <strong style="color: var(--dark); font-size: 15px; display: block; margin-bottom: 2px;">Predictive Sourcing Matrix</strong>
+                                <span style="font-size: 14px; color: var(--text);">Live BOQ matching with runout forecasting alerts and regional supplier bid automation.</span>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 16px;">
+                            <div style="width: 20px; height: 20px; border-radius: 50%; background: rgba(38, 72, 231, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 11px; flex-shrink: 0; margin-top: 2px;">✓</div>
+                            <div>
+                                <strong style="color: var(--dark); font-size: 15px; display: block; margin-bottom: 2px;">Active Delay Predictor</strong>
+                                <span style="font-size: 14px; color: var(--text);">Intelligent engine alerts flagged weeks in advance to automatically re-balance critical paths.</span>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 16px;">
+                            <div style="width: 20px; height: 20px; border-radius: 50%; background: rgba(38, 72, 231, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 11px; flex-shrink: 0; margin-top: 2px;">✓</div>
+                            <div>
+                                <strong style="color: var(--dark); font-size: 15px; display: block; margin-bottom: 2px;">Integrated WhatsApp Ecosystem</strong>
+                                <span style="font-size: 14px; color: var(--text);">Automated progress media, immediate receipts, and secure CRM notifications to clients.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE ENGINE MODULES (ASYNCHRONOUS MATRIX GRID) -->
+    <section id="modules" class="editorial-matrix-section">
+        <div class="container-editorial">
+            <div class="section-meta-block">
+                <div class="section-badge-center">Platform Foundation</div>
+                <h2 class="title-center-large">Engineered Construction Modules</h2>
+                <p class="paragraph-center-lead">Unifying daily operational logistics with advanced executive ledger metrics inside a single clean architecture.</p>
+            </div>
+            
+            <div class="asymmetric-matrix-grid structural-five-grid">
+                <!-- Module 01 -->
+                <div class="matrix-cell">
+                    <div class="cell-spatial-header">
+                        <span class="cell-index">01 / ROSTER</span>
+                        <div class="cell-vector-accent">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                    </div>
+                    <h3 class="cell-heading">Labor Management</h3>
+                    <p class="cell-description">Control daily attendance sheets, manage subcontractor rates, and coordinate tradesmen shifts transparently.</p>
+                </div>
+                
+                <!-- Module 02 -->
+                <div class="matrix-cell">
+                    <div class="cell-spatial-header">
+                        <span class="cell-index">02 / LEDGER</span>
+                        <div class="cell-vector-accent">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="9"></line><line x1="9" y1="13" x2="15" y2="13"></line><line x1="9" y1="17" x2="15" y2="17"></line><line x1="5" y1="9" x2="5.01" y2="9"></line><line x1="5" y1="13" x2="5.01" y2="13"></line><line x1="5" y1="17" x2="5.01" y2="17"></line></svg>
+                        </div>
+                    </div>
+                    <h3 class="cell-heading">Material & BOQ Suite</h3>
+                    <p class="cell-description">Manage accurate digital Bill of Quantities (BOQ), dispatch site indents, and monitor material reserves instantly.</p>
+                </div>
+
+                <!-- Module 03 -->
+                <div class="matrix-cell">
+                    <div class="cell-spatial-header">
+                        <span class="cell-index">03 / METRICS</span>
+                        <div class="cell-vector-accent">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="16" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="4"></line><line x1="8" y1="2" x2="8" y2="4"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        </div>
+                    </div>
+                    <h3 class="cell-heading">Project Tracking</h3>
+                    <p class="cell-description">Convert building plans into daily site assignments, monitor timelines, and track completion phases cleanly.</p>
+                </div>
+
+                <!-- Module 04 -->
+                <div class="matrix-cell">
+                    <div class="cell-spatial-header">
+                        <span class="cell-index">04 / CASHFLOW</span>
+                        <div class="cell-vector-accent">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </div>
+                    </div>
+                    <h3 class="cell-heading">Finance Management</h3>
+                    <p class="cell-description">Coordinate purchase orders, monitor field petty cash accounts, verify invoices, and secure overall project margins.</p>
+                </div>
+
+                <!-- Module 05 -->
+                <div class="matrix-cell">
+                    <div class="cell-spatial-header">
+                        <span class="cell-index">05 / PIPELINE</span>
+                        <div class="cell-vector-accent">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                    </div>
+                    <h3 class="cell-heading">WhatsApp CRM</h3>
+                    <p class="cell-description">Integrate pipeline CRM with automated notifications. Send instant site progress media and payment reminders to clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE AI ENGINE -->
     <section id="ai-features" class="premium-features-axis">
         <div class="container-editorial">
-            <div class="section-badge-center">Our Premium Features</div>
-            <h2 class="title-center-large">Why Choose ApniEstate?</h2>
-            <p class="paragraph-center-lead">Experience unparalleled service with our innovative approach to finding your perfect home and managing continuous infrastructure asset components.</p>
+            <div class="section-badge-center">Intelligent Core</div>
+            <h2 class="title-center-large">AI Built For Real Infrastructure Scale</h2>
+            <p class="paragraph-center-lead">Move beyond manual spreadsheets. Harness real-time site analytics and active predictions to streamline execution.</p>
             
-            <div class="trust-benchmarks-row">
-                <div class="benchmark-item"><span class="icon-gold">🏆</span> Award Winning Service</div>
-                <div class="benchmark-item"><span class="bullet-blue">💧</span> Trusted by 10K+ Families</div>
-            </div>
-
-            <div class="features-quad-grid">
+            <div class="features-quad-grid hexagon-six-grid">
                 <div class="feature-premium-card">
                     <span class="card-index-pill">01</span>
                     <div class="feature-icon-wrapper">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        <span style="font-size: 24px;">📊</span>
                     </div>
-                    <h3 class="card-title-sub">Direct Communication</h3>
-                    <p class="cell-description">Get instant responses from our experienced structural agents through our clean messaging layers.</p>
+                    <h3 class="card-title-sub">Smart Labor Allocation</h3>
+                    <p class="cell-description">Optimize roster allocation across active structural zones based on real-time task priority changes.</p>
+                    <a href="#contact" class="learn-more-link">
+                        <span>Learn more</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
                 </div>
 
                 <div class="feature-premium-card">
                     <span class="card-index-pill">02</span>
                     <div class="feature-icon-wrapper">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span style="font-size: 24px;">📉</span>
                     </div>
-                    <h3 class="card-title-sub">Verified Properties</h3>
-                    <p class="cell-description">Every layout profile is checked thoroughly to assure state level safety metrics and programmatic trust loops.</p>
+                    <h3 class="card-title-sub">Material Runout Forecasting</h3>
+                    <p class="cell-description">Avoid site stoppages. Project precise stock exhaustion milestones using physical on-site burn-rate patterns.</p>
+                    <a href="#contact" class="learn-more-link">
+                        <span>Learn more</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
                 </div>
 
                 <div class="feature-premium-card">
                     <span class="card-index-pill">03</span>
                     <div class="feature-icon-wrapper">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <span style="font-size: 24px;">⚠️</span>
                     </div>
-                    <h3 class="card-title-sub">Quality First</h3>
-                    <p class="cell-description">We maintain rigorous standards for all physical projects, ensuring you receive optimized architectural value.</p>
+                    <h3 class="card-title-sub">Timeline Delay Prediction</h3>
+                    <p class="cell-description">Flag critical vendor and subcontractor delays weeks before they translate into overall timeline overruns.</p>
+                    <a href="#contact" class="learn-more-link">
+                        <span>Learn more</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
                 </div>
 
                 <div class="feature-premium-card">
                     <span class="card-index-pill">04</span>
                     <div class="feature-icon-wrapper">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <span style="font-size: 24px;">📍</span>
                     </div>
-                    <h3 class="card-title-sub">Family Focused</h3>
-                    <p class="cell-description">Find workspaces and homes that match your custom lifestyle preferences and legacy business scale requirements perfectly.</p>
+                    <h3 class="card-title-sub">Geo-Fenced Verification</h3>
+                    <p class="cell-description">Verify physical site check-ins automatically through real-time GPS validation logs on developer devices.</p>
+                    <a href="#contact" class="learn-more-link">
+                        <span>Learn more</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+
+                <div class="feature-premium-card">
+                    <span class="card-index-pill">05</span>
+                    <div class="feature-icon-wrapper">
+                        <span style="font-size: 24px;">💬</span>
+                    </div>
+                    <h3 class="card-title-sub">WhatsApp Task Automation</h3>
+                    <p class="cell-description">Distribute inventory summaries, material orders, and task lists directly through custom automated chats.</p>
+                    <a href="#contact" class="learn-more-link">
+                        <span>Learn more</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+
+                <div class="feature-premium-card">
+                    <span class="card-index-pill">06</span>
+                    <div class="feature-icon-wrapper">
+                        <span style="font-size: 24px;">📈</span>
+                    </div>
+                    <h3 class="card-title-sub">Integrated Project Analytics</h3>
+                    <p class="cell-description">Compile multi-site financial reports, material balance sheets, and real estate pipelines into one view.</p>
+                    <a href="#contact" class="learn-more-link">
+                        <span>Learn more</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="leaders-ecosystem-axis">
+    <!-- INTEGRATED B2B MARKETPLACES -->
+    <section id="marketplace" class="leaders-ecosystem-axis">
         <div class="container-editorial">
-            <div class="section-badge-center">Trusted Worldwide</div>
-            <h2 class="title-center-large">Trusted by Industry Leaders</h2>
-            <p class="paragraph-center-lead">Join thousands of successful companies that rely on our platform for their real estate enterprise operations.</p>
+            <div class="section-badge-center">Unified Sourcing</div>
+            <h2 class="title-center-large">Everything Required For Construction in One Hub</h2>
+            <p class="paragraph-center-lead">Directly source verified labor forces, vetted suppliers, machinery rentals, and material indents inside your project ERP workspace.</p>
             
             <div class="metrics-quad-row">
                 <div class="metric-premium-box">
-                    <div class="metric-icon-box">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-                    </div>
-                    <div class="metric-huge-digits metric-numerical" data-metric-cap="20">0+</div>
-                    <div class="metric-meta-label">Trusted Partners</div>
+                    <h3 class="marketplace-title">Labor Marketplace</h3>
+                    <p class="marketplace-desc">Hire skilled contractors, verified regional builders, and specialized crew rosters mapped directly to your locations.</p>
                 </div>
-
                 <div class="metric-premium-box">
-                    <div class="metric-icon-box">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    </div>
-                    <div class="metric-huge-digits metric-numerical" data-metric-cap="5">0</div>
-                    <div class="metric-meta-label">Average Rating</div>
+                    <h3 class="marketplace-title">Vetted Contractors</h3>
+                    <p class="marketplace-desc">Hire turnkey structural partners, licensed electrical groups, and mechanical sub-contractors easily.</p>
                 </div>
-
                 <div class="metric-premium-box">
-                    <div class="metric-icon-box">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-                    </div>
-                    <div class="metric-huge-digits metric-numerical" data-metric-cap="5000">0+</div>
-                    <div class="metric-meta-label">Properties Listed</div>
+                    <h3 class="marketplace-title">Material Suppliers</h3>
+                    <p class="marketplace-desc">Procure bulk steel lots, sand batches, and concrete trucks directly from regional distribution centers.</p>
                 </div>
-
                 <div class="metric-premium-box">
-                    <div class="metric-icon-box">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                    </div>
-                    <div class="metric-huge-digits metric-numerical" data-metric-cap="98">0%</div>
-                    <div class="metric-meta-label">Success Rate</div>
+                    <h3 class="marketplace-title">Equipment Rentals</h3>
+                    <p class="marketplace-desc">Book certified heavy excavators, cranes, and concrete mixers under transparent monthly or daily rates.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="editorial-matrix-section">
+    <!-- WHY CHOOSE (UTILITY PILLS) -->
+    <section class="recognition-strut utility-highlights-strut">
         <div class="container-editorial">
-            <div class="section-meta-block">
-                <h2 class="editorial-title-large">Engineered Enterprise Core Suites</h2>
-                <p class="editorial-context-paragraph">A highly synchronized digital scaffold engineered to standardize data pipelines across spatial operations.</p>
-            </div>
+            <div class="section-badge-center">Core Platform Assets</div>
+            <h2 class="title-center-large text-center">Engineered For India's Builders</h2>
+            <p class="paragraph-center-lead">Uncompromising reliability and precision built into every structural pipeline.</p>
             
-            <div class="asymmetric-matrix-grid">
-                <div class="matrix-cell">
-                    <div class="cell-spatial-header">
-                        <span class="cell-index">01 / SYSTEMS</span>
-                        <div class="cell-vector-accent">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
-                        </div>
-                    </div>
-                    <h3 class="cell-heading">Construction ERP</h3>
-                    <p class="cell-description">Integrate complex inventory schedules, real-time logistics, procurement pipelines, and materials ledgers inside a high-throughput enterprise ecosystem.</p>
+            <div class="utility-six-box">
+                <div class="utility-pill">
+                    <svg class="pill-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg>
+                    AI-Driven Re-allocation
                 </div>
-                
-                <div class="matrix-cell">
-                    <div class="cell-spatial-header">
-                        <span class="cell-index">02 / CRM</span>
-                        <div class="cell-vector-accent">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </div>
-                    </div>
-                    <h3 class="cell-heading">Construction CRM</h3>
-                    <p class="cell-description">Standardize cross-tier communication lines among vendors, internal contractors, and field architects with clean audit visibility loops.</p>
+                <div class="utility-pill">
+                    <svg class="pill-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+                    Multi-Project Dashboards
                 </div>
-
-                <div class="matrix-cell">
-                    <div class="cell-spatial-header">
-                        <span class="cell-index">03 / MANAGEMENT</span>
-                        <div class="cell-vector-accent">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                        </div>
-                    </div>
-                    <h3 class="cell-heading">Construction Management</h3>
-                    <p class="cell-description">Translate master structural plans cleanly into discrete task configurations, assignment workflows, and safety verification cycles.</p>
+                <div class="utility-pill">
+                    <svg class="pill-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    Native WhatsApp Alerts
+                </div>
+                <div class="utility-pill">
+                    <svg class="pill-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a10 10 0 0 0-10 10c0 5.25 10 12 10 12s10-6.75 10-12a10 10 0 0 0-10-10z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    Geo-Tagged Validation
+                </div>
+                <div class="utility-pill">
+                    <svg class="pill-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    B2B Marketplace Portal
+                </div>
+                <div class="utility-pill">
+                    <svg class="pill-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    Offline Reconciliation
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- CUSTOMER JOURNEY TIMELINE -->
+    <section class="journey-workflow-axis">
+        <div class="container-editorial">
+            <div class="section-badge-center">Implementation Path</div>
+            <h2 class="title-center-large">The Customer Onboarding Journey</h2>
+            <p class="paragraph-center-lead">Our structured implementation timeline ensuring seamless pilot rollouts, labor registration, and complete project tracking in weeks, not months.</p>
+            
+            <div class="horizontal-timeline-container" style="margin-top: 64px;">
+                <div class="timeline-line" style="background: linear-gradient(90deg, var(--primary) 30%, var(--yellow-vibrant) 70%); height: 3px; top: 56px; opacity: 0.25;"></div>
+                <div class="timeline-grid" style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; position: relative; z-index: 2;">
+                    <!-- Step 1 -->
+                    <div class="timeline-step" style="background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-premium); padding: 36px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; transition: var(--transition-premium); cursor: pointer; box-shadow: var(--shadow-sm);">
+                        <div class="brand-shape brand-shape-circle" style="color: var(--white); font-weight: 800; font-family: var(--font-mono); font-size: 16px; margin-bottom: 24px;">1</div>
+                        <h4 class="step-title" style="font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 12px; line-height: 1.2;">Book Free Demo</h4>
+                        <p style="font-size: 13px; color: var(--text); line-height: 1.5; margin: 0;">Consult with our solution engineers to map your site clusters, labor logs, and current ledger workflows.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="timeline-step" style="background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-premium); padding: 36px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; transition: var(--transition-premium); cursor: pointer; box-shadow: var(--shadow-sm);">
+                        <div class="brand-shape brand-shape-square" style="color: var(--white); font-weight: 800; font-family: var(--font-mono); font-size: 16px; margin-bottom: 24px;">2</div>
+                        <h4 class="step-title" style="font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 12px; line-height: 1.2;">Setup Projects</h4>
+                        <p style="font-size: 13px; color: var(--text); line-height: 1.5; margin: 0;">Load master BOQs, assign regional material centers, and import active Gantt schedules in minutes.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="timeline-step" style="background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-premium); padding: 36px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; transition: var(--transition-premium); cursor: pointer; box-shadow: var(--shadow-sm);">
+                        <div class="brand-shape brand-shape-pill" style="color: var(--white); font-weight: 800; font-family: var(--font-mono); font-size: 16px; margin-bottom: 30px;">3</div>
+                        <h4 class="step-title" style="font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 12px; line-height: 1.2;">Onboard Labor</h4>
+                        <p style="font-size: 13px; color: var(--text); line-height: 1.5; margin: 0;">Register contractor and daily labor with instant face-scans, qualifications, and geofenced checkpoints.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="timeline-step" style="background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-premium); padding: 36px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; transition: var(--transition-premium); cursor: pointer; box-shadow: var(--shadow-sm);">
+                        <div class="brand-shape brand-shape-hexagon" style="color: var(--white); font-weight: 800; font-family: var(--font-mono); font-size: 16px; margin-bottom: 24px;">4</div>
+                        <h4 class="step-title" style="font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 12px; line-height: 1.2;">Track Progress</h4>
+                        <p style="font-size: 13px; color: var(--text); line-height: 1.5; margin: 0;">Monitor daily site logs, quantities, and milestone achievements instantly with automated manager logs.</p>
+                    </div>
+                    <!-- Step 5 -->
+                    <div class="timeline-step" style="background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-premium); padding: 36px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; transition: var(--transition-premium); cursor: pointer; box-shadow: var(--shadow-sm);">
+                        <div class="brand-shape brand-shape-diamond" style="color: var(--white); font-weight: 800; font-family: var(--font-mono); font-size: 16px; margin-bottom: 27px;"><div class="brand-shape-diamond-inner">5</div></div>
+                        <h4 class="step-title" style="font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 12px; line-height: 1.2;">Monitor Cash Flow</h4>
+                        <p style="font-size: 13px; color: var(--text); line-height: 1.5; margin: 0;">Review continuous material burn, automated indents, and secure digital contractor approval stages.</p>
+                    </div>
+                    <!-- Step 6 -->
+                    <div class="timeline-step" style="background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-premium); padding: 36px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; transition: var(--transition-premium); cursor: pointer; box-shadow: var(--shadow-sm);">
+                        <div class="brand-shape brand-shape-arrow" style="color: var(--white); font-weight: 800; font-family: var(--font-mono); font-size: 16px; margin-bottom: 24px;"><span style="margin-left: -4px;">6</span></div>
+                        <h4 class="step-title" style="font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 12px; line-height: 1.2;">On-Time Complete</h4>
+                        <p style="font-size: 13px; color: var(--text); line-height: 1.5; margin: 0;">Deliver certified projects with automated handovers, fully audited ledger files, and complete trust logs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT APNI ESTATE CORPORATE -->
     <section id="about" class="about-corporate-canvas">
         <div class="container-editorial">
             <div class="asymmetric-split-layout">
                 
                 <div class="split-left-narrative">
                     <div class="sticky-editorial-scaffold">
-                        <span class="narrative-badge">Corporate Manifesto</span>
-                        <h2 class="narrative-headline">Architecting the Digital Scaffold for India's Real Estate Infrastructure</h2>
+                        <span class="narrative-badge">About Apni Estate</span>
+                        <h2 class="narrative-headline">Setting the Foundational Standard for Construction Operations</h2>
                         <p class="narrative-body-copy">
-                            Apni Estate designs production-ready operational workflows explicitly optimized to replace legacy structural fragmentation inside modern construction enterprises.
+                            Apni Estate specializes in software designed explicitly to eliminate structural operational fragmentation inside enterprise construction firms. We align master labor logs, purchase receipts, and live geo-tagged schedules so stakeholders maintain full clarity.
                         </p>
                     </div>
                 </div>
@@ -297,11 +767,11 @@
                     <div class="manifesto-card-block">
                         <div class="manifesto-element">
                             <h4 class="manifesto-mini-title">Our Mission</h4>
-                            <p class="manifesto-paragraph">To systematically eliminate infrastructure execution friction vectors by delivering bulletproof programmatic digital solutions built explicitly for real estate builders.</p>
+                            <p class="manifesto-paragraph">To resolve construction execution delay leaks through robust programmatic software tools engineered explicitly for scaling builder groups.</p>
                         </div>
                         <div class="manifesto-element">
                             <h4 class="manifesto-mini-title">Our Vision</h4>
-                            <p class="manifesto-paragraph">To establish the foundational cloud software environment fueling predictive, transparent, high-efficiency infrastructure ecosystems across growing economies.</p>
+                            <p class="manifesto-paragraph">To establish the foundational cloud environment driving absolute predictability and optimal material sourcing throughout global infrastructure.</p>
                         </div>
                     </div>
 
@@ -309,12 +779,12 @@
                         <h3 class="values-section-label">Core System Values</h3>
                         <div class="values-linear-stack">
                             <div class="value-strip">
-                                <span class="value-title-bold">Trust</span>
-                                <p class="value-strip-context">Ensuring algorithmic accuracy, verifiable reporting data structures, and state-grade transactional safety metrics across complex multi-user enterprise actions.</p>
+                                <span class="value-title-bold">Operational Precision</span>
+                                <p class="value-strip-context">Upholding strict data structures, precise daily rosters, and secure accounting entries to ensure high-fidelity audits.</p>
                             </div>
                             <div class="value-strip">
-                                <span class="value-title-bold">Transparency</span>
-                                <p class="value-strip-context">Rendering clean operational cross-sections, allowing management frameworks complete real-time tracking loops across worksite ledgers.</p>
+                                <span class="value-title-bold">Structural Sincerity</span>
+                                <p class="value-strip-context">Displaying immediate, unambiguous site progress reports without artificial overhead summaries or manual adjustments.</p>
                             </div>
                         </div>
                     </div>
@@ -324,47 +794,73 @@
         </div>
     </section>
 
+    <!-- CONCRETE CTA SECTION -->
     <section id="contact" class="architectural-cta-block">
         <div class="container-editorial">
             <div class="cta-monolithic-panel">
                 <div class="cta-panel-content">
-                    <h2 class="cta-headline">Ready to Transform Your Construction Business?</h2>
-                    <p class="cta-subtext">Schedule a live systems validation session. Our technical architects will outline a custom infrastructure integration layout tailored directly for your active sites.</p>
-                    <button class="cta-premium-trigger-white">Book System Demo</button>
+                    <h2 class="cta-headline">Ready to Optimize Your Construction Workflows?</h2>
+                    <p class="cta-subtext">Schedule an enterprise-level validation call. Our core technical deployment team will map out a customized digital solution tailored directly to your current project sites.</p>
+                    <div class="cta-btn-group">
+                        <button class="cta-premium-trigger-white login-link">Book Your Free Demo</button>
+                        <button class="cta-outline-trigger-white login-link">Contact Sales</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- SYSTEM FOOTER -->
     <footer class="architectural-footer">
         <div class="container-editorial footer-grid-system">
             
             <div class="footer-identity-column">
                 <div class="brand-monogram text-white">
-                    <img
-                        src="WhatsApp Image 2026-07-04 at 1.29.47 PM (1).jpeg"
-                        alt="Apni Estate Logo"
-                        class="logo-img-footer"
-                        width="32"
-                        height="32"
-                    />
-                    <span class="brand-name text-white">APNI <span class="weight-light text-light-blue">ESTATE</span></span>
+                    <div class="logo-container">
+                        <img
+                            src="WhatsApp Image 2026-07-04 at 1.29.47 PM (1).jpeg"
+                            alt="Apni Estate Logo"
+                            class="logo-img-footer"
+                            onerror="this.style.display='none'; this.parentNode.innerHTML='🏢';"
+                        />
+                    </div>
+                    <span class="brand-name">APNI <span class="text-light-blue">ESTATE</span></span>
                 </div>
-                <p class="footer-corporate-bio">Enterprise scale PropTech architectures engineered meticulously to coordinate real-world project dynamics with complete programmatic safety.</p>
+                <p class="footer-corporate-bio">Next-generation, AI-driven Construction ERP suites designed explicitly to secure margins, trace materials, and allocate crew rosters seamlessly.</p>
             </div>
 
             <div class="footer-navigation-column">
                 <h5 class="footer-block-heading">Core Index</h5>
                 <ul class="footer-links-stack">
-                    <li><a href="#home">Home Base</a></li>
-                    <li><a href="#services">Services Suite</a></li>
-                    <li><a href="#about">Corporate Manifesto</a></li>
-                    <li><a href="#contact">Systems Audit Registration</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#target-audience">Solutions</a></li>
+                    <li><a href="#modules">ERP Modules</a></li>
+                    <li><a href="#ai-features">AI Engine</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-navigation-column">
+                <h5 class="footer-block-heading">Solutions</h5>
+                <ul class="footer-links-stack">
+                    <li><a href="#target-audience">For Builders</a></li>
+                    <li><a href="#target-audience">For Contractors</a></li>
+                    <li><a href="#target-audience">For Developers</a></li>
+                    <li><a href="#target-audience">For Suppliers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-navigation-column">
+                <h5 class="footer-block-heading">Company</h5>
+                <ul class="footer-links-stack">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#about">System Values</a></li>
+                    <li><a href="#contact">Contact Support</a></li>
                 </ul>
             </div>
 
             <div class="footer-contact-column">
-                <h5 class="footer-block-heading">Corporate Desk</h5>
+                <h5 class="footer-block-heading">Contact</h5>
                 <ul class="footer-contact-metadata">
                     <li class="meta-item"><span class="meta-icon-label">E:</span> solutions@apniestate.com</li>
                     <li class="meta-item"><span class="meta-icon-label">A:</span> Infrastructure Node, Tripura, India</li>
@@ -374,14 +870,16 @@
         </div>
 
         <div class="container-editorial footer-base-strip">
-            <p class="copyright-notice">&copy; 2026 Apni Estate. Systems engineered cleanly alongside enterprise interface guidelines.</p>
+            <p class="copyright-notice">&copy; 2026 Apni Estate. Built and designed according to high-contrast modern SaaS design standards.</p>
             <div class="legal-social-anchors">
-                <a href="#" class="social-anchor">LinkedIn Architecture</a>
+                <a href="#" class="social-anchor">LinkedIn Network</a>
+                <span style="color: rgba(255,255,255,0.1);">|</span>
                 <a href="#" class="social-anchor">System Status Matrix</a>
             </div>
         </div>
     </footer>
 
+    <!-- AUTHENTICATION DIALOG MODAL -->
     <div id="auth-modal" class="auth-modal-overlay">
         <div class="auth-modal-scaffold">
             <button id="auth-modal-close" class="auth-close-trigger">&times;</button>
@@ -389,7 +887,7 @@
             <div class="auth-form-container">
                 <div id="sign-in-pane" class="auth-pane">
                     <h3 class="auth-pane-title">Welcome Back</h3>
-                    <p class="auth-pane-subtitle">Access your enterprise PropTech dashboard node.</p>
+                    <p class="auth-pane-subtitle">Access your digital construction suite.</p>
                     
                     <form class="auth-form-scaffold" onsubmit="event.preventDefault();">
                         <div class="input-field-group">
@@ -404,13 +902,13 @@
                     </form>
                     
                     <p class="auth-switch-context">
-                        New to the platform? <a href="#" id="trigger-to-signup" class="auth-inline-link">Create an account</a>
+                        New to the platform? <a href="#" id="trigger-to-signup" class="auth-inline-link">Request Account</a>
                     </p>
                 </div>
 
                 <div id="sign-up-pane" class="auth-pane hidden-pane">
-                    <h3 class="auth-pane-title">Initialize Workspace</h3>
-                    <p class="auth-pane-subtitle">Deploy a secure digital architecture for your active sites.</p>
+                    <h3 class="auth-pane-title">Request Workspace</h3>
+                    <p class="auth-pane-subtitle">Deploy a secure digital ERP environment for your active sites.</p>
                     
                     <form class="auth-form-scaffold" onsubmit="event.preventDefault();">
                         <div class="input-field-group">
@@ -429,13 +927,15 @@
                     </form>
                     
                     <p class="auth-switch-context">
-                        Already registered? <a href="#" id="trigger-to-signin" class="auth-inline-link">Sign in instead</a>
+                        Already registered? <a href="#" id="trigger-to-signin" class="auth-inline-link">Sign In</a>
                     </p>
                 </div>
             </div>
         </div>
     </div>
 
+    
     <script src="js/main.js"></script>
-</body>
+
+  </body>
 </html>

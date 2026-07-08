@@ -1,31 +1,40 @@
 /**
- * Apni Estate — Dynamic Automation Core
+ * Apni Estate — Dynamic Automation Core (Polished & Pure JavaScript)
  */
 
 document.addEventListener("DOMContentLoaded", () => {
     
     // ==========================================================================
-    // 1. FLUID STICKY HEADER PADDING CONTROLLER
+    // 1. FLUID STICKY HEADER (Optimized with requestAnimationFrame)
     // ==========================================================================
     const navAxis = document.querySelector(".nav-axis");
     const navWrapper = document.querySelector(".nav-wrapper");
+    let isTicking = false;
 
-    if (navAxis && navWrapper) {
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 40) {
-                navWrapper.style.padding = "6px 40px";
-                navAxis.style.background = "rgba(255, 255, 255, 0.95)";
-                navAxis.style.boxShadow = "0 16px 40px rgba(15, 23, 42, 0.04)";
-            } else {
-                navWrapper.style.padding = "14px 40px";
-                navAxis.style.background = "rgba(255, 255, 255, 0.75)";
-                navAxis.style.boxShadow = "none";
-            }
-        }, { passive: true });
-    }
+    const updateHeader = () => {
+        if (!navAxis) return;
+
+        if (window.scrollY > 40) {
+            navAxis.classList.add("scrolled");
+            navAxis.style.background = "rgba(255, 255, 255, 0.95)";
+            navAxis.style.boxShadow = "0 10px 30px rgba(15, 23, 42, 0.05)";
+        } else {
+            navAxis.classList.remove("scrolled");
+            navAxis.style.background = "rgba(255, 255, 255, 0.8)";
+            navAxis.style.boxShadow = "none";
+        }
+        isTicking = false;
+    };
+
+    window.addEventListener("scroll", () => {
+        if (!isTicking) {
+            requestAnimationFrame(updateHeader);
+            isTicking = true;
+        }
+    }, { passive: true });
 
     // ==========================================================================
-    // 2. HIGH-PERFORMANCE NAVIGATION ACTIVE STATE MATRIX (SCROLLSPY & CLICK FIX)
+    // 2. SCROLLSPY & CLICK NAVIGATION ACTIVE STATE
     // ==========================================================================
     const navItems = document.querySelectorAll(".nav-item");
     const sections = document.querySelectorAll("main, section[id]");
@@ -53,8 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }, {
-        threshold: 0.3,
-        rootMargin: "-20% 0px -60% 0px"
+        threshold: 0.2,
+        rootMargin: "-20% 0px -40% 0px"
     });
 
     sections.forEach(section => sectionObserver.observe(section));
@@ -66,7 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const easeOutQuad = (t) => t * (2 - t);
 
     const accelerateCounters = (node) => {
-        const capValue = parseInt(node.getAttribute("data-metric-cap"), 10);
+        const capValueStr = node.getAttribute("data-metric-cap");
+        if (!capValueStr) return;
+        const capValue = parseInt(capValueStr, 10);
         if (isNaN(capValue)) return;
 
         const duration = 2000;
@@ -75,16 +86,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const counterEngine = (currentTime) => {
             if (!startTime) startTime = currentTime;
             const runtime = currentTime - startTime;
-            let progress = Math.min(runtime / duration, 1);
+            const progress = Math.min(runtime / duration, 1);
             
             const easedProgress = easeOutQuad(progress);
             const currentVal = easedProgress * capValue;
 
             if (progress < 1) {
                 if (capValue === 5) {
-                    node.textContent = (currentVal).toFixed(1);
+                    node.textContent = currentVal.toFixed(1);
                 } else {
-                    node.textContent = Math.floor(currentVal).toLocaleString() + (capValue === 98 ? "%" : "+");
+                    node.textContent = Math.round(currentVal).toLocaleString() + (capValue === 98 ? "%" : "+");
                 }
                 requestAnimationFrame(counterEngine);
             } else {
@@ -100,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // ==========================================================================
-    // 4. NATIVE INTERSECTION OBSERVERS FOR ANIMATIONS
+    // 4. NATIVE INTERSECTION OBSERVERS & STAGGER ANIMATIONS
     // ==========================================================================
     const globalObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -117,8 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }, { 
-        threshold: 0.1, 
-        rootMargin: "0px 0px -40px 0px" 
+        threshold: 0.05, 
+        rootMargin: "0px 0px -30px 0px" 
     });
 
     numericNodes.forEach(node => globalObserver.observe(node));
@@ -136,8 +147,17 @@ document.addEventListener("DOMContentLoaded", () => {
         globalObserver.observe(card);
     });
 
+    // Stagger Transition Delays for grid layouts
+    document.querySelectorAll(".feature-premium-card").forEach((card, index) => {
+        card.style.transitionDelay = `${index * 80}ms`;
+    });
+
+    document.querySelectorAll(".matrix-cell").forEach((card, index) => {
+        card.style.transitionDelay = `${index * 60}ms`;
+    });
+
     // ==========================================================================
-    // 5. MODAL INTERACTION CONTROLLER (LOGIN / SIGNUP TOGGLE)
+    // 5. MODAL INTERACTION CONTROLLER
     // ==========================================================================
     const authModal = document.getElementById("auth-modal");
     const loginTriggers = document.querySelectorAll(".login-link");
@@ -148,16 +168,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const toSignUp = document.getElementById("trigger-to-signup");
     const toSignIn = document.getElementById("trigger-to-signin");
 
-    // Open Modal View Engine (Handles both desktop and mobile buttons)
+    // Open Modal
     loginTriggers.forEach(trigger => {
         trigger.addEventListener("click", (e) => {
             e.preventDefault();
-            authModal.classList.add("active-modal");
-            document.body.style.overflow = "hidden";
+            if (authModal) {
+                authModal.classList.add("active-modal");
+                document.body.style.overflow = "hidden";
+            }
         });
     });
 
-    // Close Modal View Engine
+    // Close Modal
     if (closeTrigger && authModal) {
         closeTrigger.addEventListener("click", () => {
             authModal.classList.remove("active-modal");
@@ -172,7 +194,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Dynamic Sliding Transitions (Sign-In <=> Sign-Up Switcher Loop)
+    // Global Escape Key Listener for Modals
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && authModal && authModal.classList.contains("active-modal")) {
+            authModal.classList.remove("active-modal");
+            document.body.style.overflow = "auto";
+        }
+    });
+
+    // Sign-In <=> Sign-Up Switcher
     if (toSignUp && toSignIn && signInPane && signUpPane) {
         toSignUp.addEventListener("click", (e) => {
             e.preventDefault();
@@ -188,23 +218,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================================================
-    // 6. RESPONSIVE COMPONENT CONTROLLER (HAMBURGER OPEN/CLOSE ENGINE)
+    // 6. RESPONSIVE MOBILE MENU CONTROLLER
     // ==========================================================================
     const menuTrigger = document.getElementById("mobile-menu-trigger");
     const linksMenu = document.getElementById("nav-links-menu");
-    const mobileLinks = document.querySelectorAll(".nav-links-cluster .nav-item, .mobile-login-btn");
+    const mobileLinks = document.querySelectorAll(".nav-links-cluster .nav-item, .mobile-login-btn, .mobile-cta-btn");
 
     if (menuTrigger && linksMenu) {
         menuTrigger.addEventListener("click", (e) => {
             e.stopPropagation();
             menuTrigger.classList.toggle("open-icon");
             linksMenu.classList.toggle("open-menu");
+            
+            // Toggle body overflow based on menu state
+            document.body.style.overflow = linksMenu.classList.contains("open-menu") ? "hidden" : "auto";
         });
 
         mobileLinks.forEach(link => {
             link.addEventListener("click", () => {
                 menuTrigger.classList.remove("open-icon");
                 linksMenu.classList.remove("open-menu");
+                document.body.style.overflow = "auto";
             });
         });
 
@@ -212,7 +246,35 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!linksMenu.contains(e.target) && !menuTrigger.contains(e.target)) {
                 menuTrigger.classList.remove("open-icon");
                 linksMenu.classList.remove("open-menu");
+                document.body.style.overflow = "auto";
             }
         });
+    }
+
+    // ==========================================================================
+    // 7. HIGH-PERFORMANCE SCROLL PROGRESS BAR
+    // ==========================================================================
+    const scrollBar = document.getElementById("scrollBar");
+    
+    if (scrollBar) {
+        window.addEventListener("scroll", () => {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const percent = (scrollTop / scrollHeight) * 100;
+            
+            scrollBar.style.width = percent + "%";
+        }, { passive: true });
+    }
+
+    // ==========================================================================
+    // 8. HERO DASHBOARD PARALLAX EFFECT
+    // ==========================================================================
+    const heroDashboard = document.querySelector(".hero-dashboard-mockup");
+    
+    if (heroDashboard) {
+        window.addEventListener("scroll", () => {
+            const depth = window.scrollY * 0.05;
+            heroDashboard.style.transform = `perspective(1000px) rotateY(-5deg) rotateX(2deg) translateY(${depth}px)`;
+        }, { passive: true });
     }
 });
